@@ -1,4 +1,5 @@
 import $ from 'jquery';
+let results;
 
 export function DoctorList() {
   this.doctors = [];
@@ -6,20 +7,20 @@ export function DoctorList() {
 
 DoctorList.prototype.searchDoc = function (query) {
 
-  let that = this;
   let docListTemp = [];
 
   $.get(`https://api.betterdoctor.com/2016-03-01/doctors?location=45.523064,-122.676483,50&skip=0&limit=10&user_key=${process.env.exports.apiKey}&query=${query}`).then(function (response) {
 
     let docArray = response.data;
-    console.log(docArray);
-
-
+    
     docArray.forEach((doctor) => {
 
       let foundDoctor = new Doctor();
       if (doctor.profile.first_name !== undefined) {
         foundDoctor.firstName = doctor.profile.first_name;
+      }
+      if (doctor.profile.middle_name !== undefined) {
+        foundDoctor.middleName = doctor.profile.middle_name;
       }
       if (doctor.profile.last_name !== undefined) {
         foundDoctor.lastName = doctor.profile.last_name;
@@ -41,30 +42,33 @@ DoctorList.prototype.searchDoc = function (query) {
         foundDoctor.acceptsPatients = doctor.practices[0].accepts_new_patients;
       }
 
-
-      console.log(foundDoctor);
-
       docListTemp.push(foundDoctor);
 
-      // docListTemp2 = docListTemp.slice();
-
-      console.log(docListTemp);
-
     });
-
-    console.log(docListTemp);
-    that.doctors.push(docListTemp);
-    console.log(that.doctors);
+    
+    this.doctors = docListTemp.slice();
+    console.log(this.doctors);
+    results = this.doctors; 
+    
 
   }).fail(function (error) {
     console.log("Error completing request: " + error);
   });
+}
 
+export function printList(){
+  console.log(results);
+  results.forEach(function(doctor){
+    $("#searchResult").append(`<div class="card">Name: ${doctor.firstName} ${doctor.middleName} ${doctor.lastName}<br>Phone: ${doctor.phone}<br>Website: <a href="${doctor.website}">${doctor.website}</a><br>Office Address: ${doctor.address}<br>Doctor accepting new patients: ${doctor.acceptsPatients}</div>`);
+    
+  });
+  results = "";
 
 }
 
 export function Doctor() {
   this.firstName = "";
+  this.middleName = "";
   this.lastName = "";
   this.address = "";
   this.phone = "";
