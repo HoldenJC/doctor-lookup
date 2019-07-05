@@ -1,17 +1,19 @@
-# APP TITLE
+# Doctor Lookup
 
-#### _APP TITLE Application, 6/28/2019_
+#### _Doctor Lookup Application, 7/5/2019_
 
 #### By **Holden Clark**
 
 ## Description
 
-A website created with JS and HTML that allows the user to (APP DESCRIPTION HERE).
+A website created with JS and HTML that allows the user to lookup doctors in the Seattle, WA area.
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Program is expected to perform some action** | input | output |
+| **Program lists all doctors in Seattle, WA area** | n/a | (list of all doctors in Seattle, WA area) |
+| **User enters in medical issue/symptom and list of doctors is refined to only include doctors that can help user with their issue** | spinal | (list of all doctors in Seattle, WA area that treat spinal injuries) |
+| **User enters in doctor name and list of doctors is refined to only include doctors with that name** | Janet | (list of all doctors in Seattle, WA area with name Janet) |
 
 ## Setup/Installation Requirements
 
@@ -51,4 +53,4 @@ Copyright (c) 2019 **_Holden Clark_**
 
 This website is licensed under the MIT license.
 
-[Link to this project's repository on GitHub](https://github.com/HoldenJC/URL-HERE)
+[Link to this project's repository on GitHub](https://github.com/HoldenJC/doctor-lookup)
