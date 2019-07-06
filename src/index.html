@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Portland Area Doctor Lookup</title>
 </head>
+
 <body>
-  <div class="container-fluid">
+  <div class="container">
     <div class="jumbotron">
       <h1 class="display-1">Portland Doctor Search</h1>
     </div>
 
     <div id="searchArea">
-      <input id="querySearch" type="text" placeholder="Doc Name / Symptom" class="form-control">
+      <label for="querySearch">Search for a doctor within 50 miles of Portland by name or by your current
+        symptom</label>
+      <input id="querySearch" type="text" placeholder="Doctor Name or Symptom (ex: David or Acne)" class="form-control">
       <button id="querySubmit" type="button" class="btn btn-primary">Search</button>
     </div>
 
+    <div id="userQuery"></div>
+    <div id="searchStatus"></div>
     <div id="searchResult"></div>
 
-    </div>
+  </div>
 </body>
+
 </html>

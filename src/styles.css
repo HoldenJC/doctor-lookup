@@ -1,11 +1,18 @@
 .jumbotron {
+  margin-top: 15px;
   text-align: center;
 }
 
-#searchArea {
+#searchArea, #searchStatus, #searchResult, #userQuery {
   text-align: center;
 }
 
 #querySubmit {
   margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.card {
+  margin: 15px;
+  text-align: left;
 }

@@ -7,21 +7,24 @@ import { DoctorList, printList } from './backend-code';
 let doctorList = new DoctorList();
 let searchQuery = "";
 
-function addListeners(){
- 
-  $("#querySubmit").click(function(){
+function addListeners() {
+
+  $("#querySubmit").click(function () {
     $("#searchResult").empty();
     searchQuery = $("#querySearch").val();
+    $("#userQuery").html(`You searched for: ${searchQuery}`);
     console.log(searchQuery);
     doctorList.searchDoc(searchQuery);
+    $("#searchStatus").html("Searching...");
 
-    setTimeout(function(){
+    setTimeout(function () {
       printList();
+      $("#searchStatus").empty();
     }, 2000);
-    
+
   });
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   addListeners();
 });
