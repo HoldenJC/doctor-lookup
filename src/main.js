@@ -12,15 +12,19 @@ function addListeners() {
   $("#querySubmit").click(function () {
     $("#searchResult").empty();
     searchQuery = $("#querySearch").val();
+    $("#querySearch").val("");
     $("#userQuery").html(`You searched for: ${searchQuery}`);
-    console.log(searchQuery);
-    doctorList.searchDoc(searchQuery);
     $("#searchStatus").html("Searching...");
+    $("#querySubmit").hide();
+    
+    doctorList.searchDoc(searchQuery);
 
     setTimeout(function () {
       printList();
       $("#searchStatus").empty();
-    }, 2000);
+      $("#querySubmit").show();
+      $("#userQuery").html(`Results for: ${searchQuery}`);
+    }, 3000);
 
   });
 }

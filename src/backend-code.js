@@ -12,12 +12,14 @@ DoctorList.prototype.searchDoc = function (query) {
   $.get(`https://api.betterdoctor.com/2016-03-01/doctors?location=45.523064,-122.676483,50&skip=0&limit=100&user_key=${process.env.exports.apiKey}&query=${query}`).then(function (response) {
 
     let docArray = response.data;
-
     docArray.forEach((doctor) => {
 
       let foundDoctor = new Doctor();
       if (doctor.practices[0].within_search_area === true) {
 
+        if (doctor.practices[0].name !== undefined) {
+          foundDoctor.practiceName = doctor.practices[0].name;
+        }
         if (doctor.profile.first_name !== undefined) {
           foundDoctor.firstName = doctor.profile.first_name;
         }
@@ -64,13 +66,15 @@ export function printList() {
   }
 
   results.forEach(function (doctor) {
-    $("#searchResult").append(`<div class="card">Name: ${doctor.firstName} ${doctor.middleName} ${doctor.lastName}<br>Phone: ${doctor.phone}<br>Website: <a href="${doctor.website}">${doctor.website}</a>Office Address: ${doctor.address}<br>Doctor accepting new patients: ${doctor.acceptsPatients}</div>`);
+    $("#searchResult").append(`<div class="card">Practice: ${doctor.practiceName}<br>Name: ${doctor.firstName} ${doctor.middleName} ${doctor.lastName}<br>Phone: ${doctor.phone}<br>Website: <a href="${doctor.website}">${doctor.website}</a>Office Address: ${doctor.address}<br>Doctor accepting new patients: ${doctor.acceptsPatients}</div>`);
   });
 
   results = "";
+  return;
 }
 
 export function Doctor() {
+  this.practiceName = "";
   this.firstName = "";
   this.middleName = "";
   this.lastName = "";

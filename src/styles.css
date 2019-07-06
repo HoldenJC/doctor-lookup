@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-#querySubmit {
+#querySubmit, #searchStatus, #userQuery {
   margin-top: 15px;
   margin-bottom: 15px;
 }
