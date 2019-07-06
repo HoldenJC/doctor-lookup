@@ -20,7 +20,11 @@ A website created with JS and HTML that allows the user to lookup doctors in the
 * _Clone this repository_
 * _Open bash / terminal_
 * _Navigate to the root directory of the cloned repository_
-* _Type "npm i" into bash / terminal_
+* _Type "npm i" or "npm install" into bash / terminal_
+* _Type "touch .env" into bash / terminal_
+* _Go to https://developer.betterdoctor.com and get an API key_
+* _Open .env with your preferred text editor_
+* _Type "exports.apiKey = YOUR-KEY-HERE" then save and close file_
 * _Type "npm run build" into terminal / bash (still in root directory)_
 * _Open explorer / finder and navigate to the cloned repository_
 * _Navigate to the "dist" folder within cloned repository_
