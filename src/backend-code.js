@@ -51,7 +51,6 @@ DoctorList.prototype.searchDoc = function (query) {
     });
 
     this.doctors = docListTemp.slice();
-    console.log(this.doctors);
     results = this.doctors;
 
   }).fail(function (error) {
