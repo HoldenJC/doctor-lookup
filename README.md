@@ -6,14 +6,14 @@
 
 ## Description
 
-A website created with JS and HTML that allows the user to lookup doctors in the Seattle, WA area.
+A website created with JS and HTML that allows the user to lookup doctors in the Portland, OR area.
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Program lists all doctors in Seattle, WA area** | n/a | (list of all doctors in Seattle, WA area) |
-| **User enters in medical issue/symptom and list of doctors is refined to only include doctors that can help user with their issue** | spinal | (list of all doctors in Seattle, WA area that treat spinal injuries) |
-| **User enters in doctor name and list of doctors is refined to only include doctors with that name** | Janet | (list of all doctors in Seattle, WA area with name Janet) |
+| **Program lists all doctors in Portland, OR area** | n/a | (list of all doctors in Portland, OR area) |
+| **User enters in medical issue/symptom and list of doctors is refined to only include doctors that can help user with their issue** | spinal | (list of all doctors in Portland, OR area that treat spinal injuries) |
+| **User enters in doctor name and list of doctors is refined to only include doctors with that name** | Janet | (list of all doctors in Portland, OR area with name Janet) |
 
 ## Setup/Installation Requirements
 
