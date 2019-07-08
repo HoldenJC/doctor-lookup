@@ -11,9 +11,8 @@ A website created with JS and HTML that allows the user to lookup doctors in the
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Program lists all doctors in Portland, OR area** | n/a | (list of all doctors in Portland, OR area) |
-| **User enters in medical issue/symptom and list of doctors is refined to only include doctors that can help user with their issue** | spinal | (list of all doctors in Portland, OR area that treat spinal injuries) |
-| **User enters in doctor name and list of doctors is refined to only include doctors with that name** | Janet | (list of all doctors in Portland, OR area with name Janet) |
+| **User enters in medical issue/symptom and list of doctors (up to 100) is returned that only includes doctors who have treated that issue** | spinal | (list of up to 100 doctors in Portland, OR area that treat spinal injuries) |
+| **User enters in a name and list of doctors (up to 100) is returned that includes doctors or practices with that name** | Janet | (list of up to 100 doctors/practices in Portland, OR area with name Janet) |
 
 ## Setup/Installation Requirements
 
